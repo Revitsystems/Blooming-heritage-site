@@ -1,252 +1,286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Blooming Heritage School · Life Long Learners</title>
-<meta name="description" content="Blooming Heritage School, Lokogoma, Abuja. Nigerian–British curriculum from Early Years to Secondary.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#fff;--alt:#f5f2ea;--fg:#15201a;--mut:#56645c;--line:#dcd8cc;--g:#0b5d3b;--gd:#073b26;--l:#A7CE52;--r:#D52E43;--hd:'Crimson Pro',Georgia,'Times New Roman',serif;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1511;--alt:#121c17;--fg:#eef2eb;--mut:#a3b3aa;--line:#26352d;--g:#7fb069;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0d1511;--alt:#121c17;--fg:#eef2eb;--mut:#a3b3aa;--line:#26352d;--g:#7fb069;color-scheme:dark}
-*{box-sizing:border-box;margin:0}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:120px}
-body{background:var(--bg);color:var(--fg);font:400 17px/1.65 'Source Sans 3',system-ui,sans-serif;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--gd);z-index:90}
-a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{font-family:var(--hd);font-weight:600;line-height:1.1;letter-spacing:-.01em}
-.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-.cap{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-#top{background:var(--gd);color:#dfe9e1;font-size:13px}
-#top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
-#top a{margin-left:22px;opacity:.85}#top a:hover{opacity:1;text-decoration:underline}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:var(--bg);border-bottom:1px solid var(--line);transition:box-shadow .3s}
-header.s{box-shadow:0 6px 24px rgba(0,0,0,.08)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand svg{width:40px;height:46px;color:var(--g)}
-.brand b{display:block;font:600 24px/1 var(--hd);color:var(--g)}
-.brand small{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);margin-top:4px}
-nav{display:flex;gap:28px;align-items:center;font-weight:500;font-size:15px}
-nav a:not(.btn){position:relative;padding:6px 0}
-nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--g);transition:width .3s}
-nav a:not(.btn):hover::after{width:100%}
-.btn{display:inline-block;padding:13px 26px;background:var(--g);color:#fff;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--g);cursor:pointer;font-family:inherit;transition:all .25s}
-.btn:hover{background:var(--gd);border-color:var(--gd)}
-.btn.o{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}.btn.o:hover{background:#fff;color:var(--gd);border-color:#fff}
-#bg{display:none;background:none;border:1px solid var(--line);width:42px;height:42px;font-size:22px;color:var(--fg);cursor:pointer}
-/* slider */
-#hero{position:relative;height:min(82vh,760px);min-height:540px;background:var(--gd);overflow:hidden;color:#fff}
-.sl{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.2s,visibility 1.2s}
-.sl.on{opacity:1;visibility:visible}
-.scene{position:absolute;inset:0;transform:scale(1.06)}
-.sl.on .scene{animation:kb 9s ease-out forwards}
-@keyframes kb{to{transform:scale(1.18) translate(-1.5%,-1%)}}
-.scene svg{width:100%;height:100%;display:block}
-.sl::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,30,19,.88),rgba(4,30,19,.35) 60%,transparent)}
-.cp{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:720px}
-.cp .cap{color:var(--l);margin-bottom:18px;display:flex;gap:12px;align-items:center}
-.cp .cap::before{content:"";width:36px;height:2px;background:var(--l)}
-.cp h1{font-size:clamp(42px,6.4vw,84px);line-height:1.02}
-.cp h1 i{font-weight:400;color:var(--l)}
-.cp p{font-size:clamp(17px,2vw,21px);margin:22px 0 34px;max-width:54ch;color:#e6efe8}
-.cp>*{opacity:0;transform:translateY(26px)}
-.sl.on .cp>*{animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
-.sl.on .cp>*:nth-child(2){animation-delay:.15s}.sl.on .cp>*:nth-child(3){animation-delay:.3s}.sl.on .cp>*:nth-child(4){animation-delay:.45s}
-@keyframes rise{to{opacity:1;transform:none}}
-.ctl{position:absolute;left:0;right:0;bottom:0;z-index:5;padding-bottom:26px}
-.ctl .wrap{display:flex;align-items:center;gap:18px}
-.bars{display:flex;gap:10px;flex:1;max-width:620px}
-.bar{flex:1;background:none;border:0;padding:12px 0 0;cursor:pointer;color:#fff;text-align:left;font:600 12px 'Source Sans 3';letter-spacing:.1em;text-transform:uppercase;opacity:.65}
-.bar.on{opacity:1}
-.bar i{display:block;height:3px;background:rgba(255,255,255,.3);margin-bottom:8px;position:relative;overflow:hidden}
-.bar i::after{content:"";position:absolute;inset:0;background:var(--l);transform:scaleX(0);transform-origin:left}
-.bar.on i::after{animation:fill var(--t,7s) linear forwards}
-#hero.p .bar.on i::after{animation-play-state:paused}
-@keyframes fill{to{transform:none}}
-.ar{width:46px;height:46px;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.15);color:#fff;font-size:20px;cursor:pointer;transition:all .25s}
-.ar:hover{background:#fff;color:var(--gd)}
-.ctl .sp{flex:1}
-/* sections */
-section{padding:clamp(64px,9vw,112px) 0}
-section.alt{background:var(--alt)}
-.ey{color:var(--g);margin-bottom:14px}
-h2{font-size:clamp(32px,4.4vw,54px);max-width:20ch}
-.ld{color:var(--mut);font-size:19px;max-width:60ch;margin-top:18px}
-[data-r]{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s;transition-delay:var(--d,0s)}
-[data-r].in{opacity:1;transform:none}
-.notice{background:var(--l);color:#10260f}
-.notice .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px;font-weight:600}
-.notice a{text-decoration:underline}
-.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.crest{aspect-ratio:4/5;background:var(--gd);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:30px;color:#fff;border-radius:2px}
-.crest svg{position:absolute;inset:0;width:100%;height:100%}
-.crest q{position:relative;font:italic 400 clamp(26px,3vw,38px)/1.2 var(--hd);quotes:"“" "”"}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:3px solid var(--g)}
-.stat{padding:26px 22px 8px 0}
-.stat .n{font:600 clamp(40px,5vw,66px)/1 var(--hd);color:var(--g)}
-.stat p{color:var(--mut);font-size:15px;margin-top:8px}
-.fn{font-size:13px;color:var(--mut);margin-top:18px}
-/* academics */
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-top:40px;overflow-x:auto}
-.tab{background:none;border:0;padding:16px 28px;font:600 17px var(--hd);color:var(--mut);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
-.tab:hover{color:var(--fg)}.tab[aria-selected=true]{color:var(--g);border-color:var(--g)}
-.pn{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:44px 0 0;animation:fd .5s}
-@keyframes fd{from{opacity:0;transform:translateY(12px)}}
-.pn h3{font-size:clamp(28px,3.4vw,42px)}.pn p{color:var(--mut);margin-top:14px}
-.pn ul{list-style:none;padding:0}.pn li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
-.pn li::before{content:"✦";color:var(--g)}
-/* news */
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px}
-.card{background:var(--bg);border:1px solid var(--line);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(7,59,38,.14)}
-.card .im{height:120px;background:var(--g);position:relative;overflow:hidden}
-.card .im svg{width:100%;height:100%}
-.card div.t{padding:22px}
-.card .cap{color:var(--g);font-size:11px}
-.card h4{font-size:22px;margin:8px 0}.card p{color:var(--mut);font-size:15px}
-/* life */
-.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
-.pill{border:1px solid var(--line);background:var(--bg);padding:12px 22px;border-radius:40px;font-weight:500;transition:all .25s;cursor:default}
-.pill:hover{background:var(--g);color:#fff;border-color:var(--g);transform:translateY(-3px)}
-.fac{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
-.fac div{background:var(--bg);padding:28px 22px;transition:background .3s}.fac div:hover{background:var(--alt)}
-.fac b{display:block;font:600 21px var(--hd);color:var(--g)}.fac span{color:var(--mut);font-size:14px}
-/* admissions */
-.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
-.step{counter-increment:s;padding-top:20px;border-top:3px solid var(--g)}
-.step::before{content:"0" counter(s);font:600 40px var(--hd);color:var(--g)}
-.step h4{font-size:22px;margin:6px 0}.step p{color:var(--mut);font-size:15px}
-.form{background:var(--gd);color:#fff;padding:clamp(28px,4vw,52px)}
-.form h3{font-size:34px}
-.f{display:block;margin-top:20px}.f span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:#bcd0c2}
-.f input,.f select,.f textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;font:inherit;padding:12px 14px;outline:0;border-radius:0}
-.f select option{color:#111}
-.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--l)}
-.f.bad input,.f.bad textarea{border-color:var(--r)}
-.form .btn{margin-top:26px;background:var(--l);border-color:var(--l);color:#10260f}
-#ok{display:none;margin-top:14px;color:var(--l)}
-footer{background:var(--gd);color:#c9d8ce;padding:64px 0 30px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-footer a,footer p{display:block;font-size:15px;margin-top:8px}footer a:hover{color:#fff;text-decoration:underline}
-footer h4{color:#fff;font-size:20px}
-.cr{border-top:1px solid rgba(255,255,255,.15);margin-top:44px;padding-top:22px;font-size:13px}
-#up{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));width:46px;height:46px;background:var(--g);color:#fff;border:0;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:70}
-#up.v{opacity:1;pointer-events:auto}
-@media(max-width:960px){
-nav{position:fixed;left:0;right:0;top:calc(78px + env(safe-area-inset-top,0px));flex-direction:column;align-items:flex-start;background:var(--bg);padding:24px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:transform .4s;z-index:-1}
-nav.o{transform:none}#bg{display:block}#top .wrap>span{display:none}
-.split,.pn,.fg{grid-template-columns:1fr}.cards,.fac,.stats{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.bar span{display:none}.crest{aspect-ratio:16/10}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.cp>*,[data-r]{opacity:1;transform:none}}
-</style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute"><symbol id="sh" viewBox="0 0 40 46"><path d="M20 1 38 8v15c0 11-8 17-18 21C10 40 2 34 2 23V8z" fill="currentColor"/><path d="M20 35V17m0 6c0-6 4-9 9-9 0 6-4 9-9 9zm0 5c0-4-3-7-7-7 0 4 3 7 7 7z" fill="#A7CE52"/></symbol></svg>
-<div id="top"><div class="wrap"><span>Nzube Estate, Lokogoma, Abuja · +234 818 034 2163</span><div><a href="#admissions">Admissions</a><a href="#enquire">Contact</a><a href="https://bloomingheritage.eschoolng.net" target="_blank" rel="noopener">Parent &amp; Student Portal</a></div></div></div>
-<header id="hd"><div class="wrap">
-<a class="brand" href="#hero"><svg><use href="#sh"/></svg><span><b>Blooming Heritage</b><small>School · Abuja</small></span></a>
-<nav id="nv"><a href="#about">About</a><a href="#academics">Academics</a><a href="#news">News</a><a href="#life">Student Life</a><a href="#admissions">Admissions</a><a class="btn" href="#enquire">Enquire Now</a></nav>
-<button id="bg" aria-label="Menu">≡</button></div></header>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Blooming Heritage School · Life Long Learners</title>
+    <meta
+      name="description"
+      content="Blooming Heritage School, Lokogoma, Abuja. Nigerian–British curriculum from Early Years to Secondary."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="top">
+      <div class="wrap">
+        <span>Nzube Estate, Lokogoma, Abuja · +234 818 034 2163</span>
+        <div>
+          <a href="#admissions">Admissions</a><a href="#enquire">Contact</a
+          ><a
+            href="https://bloomingheritage.eschoolng.net"
+            target="_blank"
+            rel="noopener"
+            >Parent &amp; Student Portal</a
+          >
+        </div>
+      </div>
+    </div>
+    <header id="hd">
+      <div class="wrap">
+        <a class="brand" href="#hero"
+          ><img
+            src="./logo.png"
+            alt="Blooming Heritage School"
+            width="46"
+            height="46"
+          /><span
+            ><b>Blooming Heritage</b><small>School · Abuja</small></span
+          ></a
+        >
+        <nav id="nv">
+          <a href="#about">About</a><a href="#academics">Academics</a
+          ><a href="#news">News</a><a href="#life">Student Life</a
+          ><a href="#admissions">Admissions</a
+          ><a class="btn" href="#enquire">Enquire Now</a>
+        </nav>
+        <button id="bg" aria-label="Menu">≡</button>
+      </div>
+    </header>
 
-<div id="hero" aria-roledescription="carousel" aria-label="Featured stories"></div>
-<div class="notice"><div class="wrap"><span>Admissions are open for the 2026/2027 academic session.</span><a href="#enquire">Start an enquiry →</a></div></div>
+    <div
+      id="hero"
+      aria-roledescription="carousel"
+      aria-label="Featured stories"
+    ></div>
+    <div class="notice">
+      <div class="wrap">
+        <span>Admissions are open for the 2026/2027 academic session.</span
+        ><a href="#enquire">Start an enquiry →</a>
+      </div>
+    </div>
 
-<section id="about"><div class="wrap"><div class="split">
-<div data-r><div class="cap ey">About the School</div><h2>Educating the whole child, since 2013.</h2>
-<p class="ld">Blooming Heritage School was founded on a simple vision: quality education for young children. Today our community in Lokogoma, Abuja, serves families from Early Years to Secondary, on a blended Nigerian–British curriculum.</p>
-<p class="ld">We pair academic excellence with character, moral instruction, creativity and leadership, so every pupil becomes capable, confident and creative, ready for the 21st century.</p>
-<a class="btn" style="margin-top:30px" href="#academics">Explore Academics</a></div>
-<div class="crest" data-r style="--d:.15s"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#A7CE52" stroke-opacity=".25"><path d="M60 500V230a60 60 0 0 1 120 0v270M220 500V230a60 60 0 0 1 120 0v270"/><path d="M90 500V240a30 30 0 0 1 60 0v260M250 500V240a30 30 0 0 1 60 0v260"/></g><circle cx="330" cy="90" r="40" fill="#A7CE52" fill-opacity=".18"/></svg><q>Life Long Learners</q></div></div>
-<div class="stats">
-<div class="stat" data-r><div class="n" data-c="2013">0</div><p>Year the school’s company was incorporated</p></div>
-<div class="stat" data-r style="--d:.1s"><div class="n">3rd</div><p>Best private primary school, reported by the FCTA in 2021</p></div>
-<div class="stat" data-r style="--d:.2s"><div class="n"><span data-c="20">0</span>+</div><p>Classrooms, per the school’s public profile</p></div>
-<div class="stat" data-r style="--d:.3s"><div class="n"><span data-c="5000">0</span>+</div><p>Library books, per the school’s public profile</p></div></div>
-<p class="fn">Figures come from public records and school-reported profiles.</p></div></section>
+    <section id="about">
+      <div class="wrap">
+        <div class="split">
+          <div data-r>
+            <div class="cap ey">About the School</div>
+            <h2>Educating the whole child, since 2013.</h2>
+            <p class="ld">
+              Blooming Heritage School was founded on a simple vision: quality
+              education for young children. Today our community in Lokogoma,
+              Abuja, serves families from Early Years to Secondary, on a blended
+              Nigerian–British curriculum.
+            </p>
+            <p class="ld">
+              We pair academic excellence with character, moral instruction,
+              creativity and leadership, so every pupil becomes capable,
+              confident and creative, ready for the 21st century.
+            </p>
+            <a class="btn" style="margin-top: 30px" href="#academics"
+              >Explore Academics</a
+            >
+          </div>
+          <div class="crest" data-r style="--d: 0.15s">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+              <g fill="none" stroke="#ffffff" stroke-opacity=".25">
+                <path
+                  d="M60 500V230a60 60 0 0 1 120 0v270M220 500V230a60 60 0 0 1 120 0v270"
+                />
+                <path
+                  d="M90 500V240a30 30 0 0 1 60 0v260M250 500V240a30 30 0 0 1 60 0v260"
+                />
+              </g>
+              <circle
+                cx="330"
+                cy="90"
+                r="40"
+                fill="#f5070a"
+                fill-opacity=".55"
+              /></svg
+            ><q>Life Long Learners</q>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat" data-r>
+            <div class="n" data-c="2013">0</div>
+            <p>Year the school’s company was incorporated</p>
+          </div>
+          <div class="stat" data-r style="--d: 0.1s">
+            <div class="n">3rd</div>
+            <p>Best private primary school, reported by the FCTA in 2021</p>
+          </div>
+          <div class="stat" data-r style="--d: 0.2s">
+            <div class="n"><span data-c="20">0</span>+</div>
+            <p>Classrooms, per the school’s public profile</p>
+          </div>
+          <div class="stat" data-r style="--d: 0.3s">
+            <div class="n"><span data-c="5000">0</span>+</div>
+            <p>Library books, per the school’s public profile</p>
+          </div>
+        </div>
+        <p class="fn">
+          Figures come from public records and school-reported profiles.
+        </p>
+      </div>
+    </section>
 
-<section class="alt" id="academics"><div class="wrap">
-<div class="cap ey" data-r>Academics</div><h2 data-r>A journey from first words to final exams.</h2>
-<div class="tabs" id="tabs" role="tablist" data-r></div><div id="pn"></div></div></section>
+    <section class="alt" id="academics">
+      <div class="wrap">
+        <div class="cap ey" data-r>Academics</div>
+        <h2 data-r>A journey from first words to final exams.</h2>
+        <div class="tabs" id="tabs" role="tablist" data-r></div>
+        <div id="pn"></div>
+      </div>
+    </section>
 
-<section id="news"><div class="wrap">
-<div class="cap ey" data-r>News &amp; Milestones</div><h2 data-r>Moments that shape our story.</h2>
-<div class="cards" id="cards"></div></div></section>
+    <section id="news">
+      <div class="wrap">
+        <div class="cap ey" data-r>News &amp; Milestones</div>
+        <h2 data-r>Moments that shape our story.</h2>
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
 
-<section class="alt" id="life"><div class="wrap">
-<div class="cap ey" data-r>Student Life</div><h2 data-r>Talent grows outside the classroom too.</h2>
-<div class="pills" id="pills" data-r></div>
-<div class="fac" id="fac" data-r></div>
-<p class="fn">Facilities are as listed in public school profiles. Please confirm on a campus visit.</p></div></section>
+    <section class="alt" id="life">
+      <div class="wrap">
+        <div class="cap ey" data-r>Student Life</div>
+        <h2 data-r>Talent grows outside the classroom too.</h2>
+        <div class="pills" id="pills" data-r></div>
+        <div class="fac" id="fac" data-r></div>
+        <p class="fn">
+          Facilities are as listed in public school profiles. Please confirm on
+          a campus visit.
+        </p>
+      </div>
+    </section>
 
-<section id="admissions"><div class="wrap">
-<div class="cap ey" data-r>Admissions</div><h2 data-r>Joining our community.</h2>
-<div class="steps"><div class="step" data-r><h4>Enquire</h4><p>Tell us about your child and the stage you are considering.</p></div>
-<div class="step" data-r style="--d:.1s"><h4>Visit</h4><p>Arrange a time to meet the team and see the campus.</p></div>
-<div class="step" data-r style="--d:.2s"><h4>Apply</h4><p>The school will guide you through its application and fee details.</p></div></div></div></section>
+    <section id="admissions">
+      <div class="wrap">
+        <div class="cap ey" data-r>Admissions</div>
+        <h2 data-r>Joining our community.</h2>
+        <div class="steps">
+          <div class="step" data-r>
+            <h4>Enquire</h4>
+            <p>Tell us about your child and the stage you are considering.</p>
+          </div>
+          <div class="step" data-r style="--d: 0.1s">
+            <h4>Visit</h4>
+            <p>Arrange a time to meet the team and see the campus.</p>
+          </div>
+          <div class="step" data-r style="--d: 0.2s">
+            <h4>Apply</h4>
+            <p>
+              The school will guide you through its application and fee details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="alt" id="enquire"><div class="wrap split" style="align-items:start">
-<div data-r><div class="cap ey">Contact</div><h2>We’d love to hear from you.</h2>
-<p class="ld">Parents and guardians can follow reports, assignments and quizzes on the school portal.</p>
-<a class="btn" style="margin-top:26px" href="https://bloomingheritage.eschoolng.net" target="_blank" rel="noopener">Open the Portal ↗</a>
-<p style="margin-top:34px"><b>Campus</b><br>A3 Ben Magaji Road, Nzube Estate, Lokogoma, Abuja</p>
-<p style="margin-top:14px"><b>Phone</b><br>+234 818 034 2163 · +234 912 316 3604</p>
-<p style="margin-top:14px"><b>Email</b><br>bloomingheritagesecsch@gmail.com</p></div>
-<form class="form" id="f" novalidate data-r style="--d:.15s"><h3>Admissions enquiry</h3>
-<label class="f"><span>Parent / guardian name</span><input id="n" required autocomplete="name"></label>
-<label class="f"><span>Email</span><input id="e" type="email" required autocomplete="email"></label>
-<label class="f"><span>Stage of interest</span><select id="s"><option>Early Years</option><option>Nursery</option><option>Primary</option><option>Secondary</option></select></label>
-<label class="f"><span>Message</span><textarea id="m" rows="3" required></textarea></label>
-<button class="btn" type="submit">Send Enquiry</button><p id="ok">Your email app is opening with the enquiry ready to send.</p></form></div></section>
+    <section class="alt" id="enquire">
+      <div class="wrap split" style="align-items: start">
+        <div data-r>
+          <div class="cap ey">Contact</div>
+          <h2>We’d love to hear from you.</h2>
+          <p class="ld">
+            Parents and guardians can follow reports, assignments and quizzes on
+            the school portal.
+          </p>
+          <a
+            class="btn"
+            style="margin-top: 26px"
+            href="https://bloomingheritage.eschoolng.net"
+            target="_blank"
+            rel="noopener"
+            >Open the Portal ↗</a
+          >
+          <p style="margin-top: 34px">
+            <b>Campus</b><br />A3 Ben Magaji Road, Nzube Estate, Lokogoma, Abuja
+          </p>
+          <p style="margin-top: 14px">
+            <b>Phone</b><br />+234 818 034 2163 · +234 912 316 3604
+          </p>
+          <p style="margin-top: 14px">
+            <b>Email</b><br />bloomingheritagesecsch@gmail.com
+          </p>
+        </div>
+        <form class="form" id="f" novalidate data-r style="--d: 0.15s">
+          <h3>Admissions enquiry</h3>
+          <label class="f"
+            ><span>Parent / guardian name</span
+            ><input id="n" required autocomplete="name"
+          /></label>
+          <label class="f"
+            ><span>Email</span
+            ><input id="e" type="email" required autocomplete="email"
+          /></label>
+          <label class="f"
+            ><span>Stage of interest</span
+            ><select id="s">
+              <option>Early Years</option>
+              <option>Nursery</option>
+              <option>Primary</option>
+              <option>Secondary</option>
+            </select></label
+          >
+          <label class="f"
+            ><span>Message</span><textarea id="m" rows="3" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send Enquiry</button>
+          <p id="ok">
+            Your email app is opening with the enquiry ready to send.
+          </p>
+        </form>
+      </div>
+    </section>
 
-<footer><div class="wrap"><div class="fg">
-<div><div class="brand" style="color:#fff"><svg style="color:#A7CE52"><use href="#sh"/></svg><span><b style="color:#fff">Blooming Heritage</b></span></div><p>Life Long Learners. Nursery, primary and secondary education in Lokogoma, Abuja.</p></div>
-<div><h4>Explore</h4><a href="#about">About</a><a href="#academics">Academics</a><a href="#life">Student Life</a></div>
-<div><h4>Connect</h4><a href="#enquire">Contact us</a><a href="https://bloomingheritage.eschoolng.net" target="_blank" rel="noopener">Portal</a><a href="mailto:bloomingheritagesecsch@gmail.com">Email</a></div></div>
-<div class="cr">© 2026 Blooming Heritage Schools. All rights reserved.</div></div></footer>
-<button id="up" aria-label="Back to top">↑</button>
+    <footer>
+      <div class="wrap">
+        <div class="fg">
+          <div>
+            <div class="brand" style="color: #fff">
+              <img src="logo.png" alt="" width="46" height="46" /><span
+                ><b style="color: #fff">Blooming Heritage School</b></span
+              >
+            </div>
+            <p>
+              Life Long Learners. Nursery, primary and secondary education in
+              Lokogoma, Abuja.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="#about">About</a><a href="#academics">Academics</a
+            ><a href="#life">Student Life</a>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="#enquire">Contact us</a
+            ><a
+              href="https://bloomingheritage.eschoolng.net"
+              target="_blank"
+              rel="noopener"
+              >Portal</a
+            ><a href="mailto:bloomingheritagesecsch@gmail.com">Email</a>
+          </div>
+        </div>
+        <div class="cr">
+          © 2026 Blooming Heritage School. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <button id="up" aria-label="Back to top">↑</button>
 
-<script>
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
-// hero slides (swap each .scene for a real photo: background:url() center/cover)
-const SL=[['Admissions 2026/2027','Life Long <i>Learners</i>','A Nigerian–British education that helps every child become capable, confident and creative.','Begin an Enquiry','#enquire',['#0b5d3b','#073b26','#A7CE52']],
-['From Early Years to Secondary','One school. <i>Every</i> stage.','Joyful foundations, rigorous primary teaching and a secondary programme that prepares students for what comes next.','Explore Academics','#academics',['#0d6b3a','#04281a','#d9e6a8']],
-['Recognised Excellence','Named among the nation’s <i>best</i>.','In 2021 the FCT Administration reported Blooming Heritage as the third-best private primary school in the country.','Read Our Story','#news',['#12603f','#06301f','#e8c872']],
-['Beyond the Classroom','Twelve clubs. Endless <i>curiosity</i>.','Debate, coding, music, chess, journalism, drama and more, so every pupil finds their spark.','Discover Student Life','#life',['#0a5538','#052a1b','#A7CE52']]];
-const sc=(c,k)=>`<svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g${k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c[0]}"/><stop offset="1" stop-color="${c[1]}"/></linearGradient></defs><rect width="1200" height="700" fill="url(#g${k})"/><circle cx="${850+k*60}" cy="190" r="${90+k*10}" fill="${c[2]}" opacity=".28"/><g fill="none" stroke="${c[2]}" stroke-opacity=".3" stroke-width="2">${[0,1,2,3,4,5,6].map(i=>`<path d="M${520+i*95} 700V${380-k*10}a38 38 0 0 1 76 0V700"/>`).join('')}</g><path d="M0 620Q300 520 600 600T1200 560V700H0Z" fill="#031a10" opacity=".6"/></svg>`;
-const H=$('#hero');
-H.innerHTML=SL.map((s,i)=>`<div class="sl" role="group" aria-label="${i+1} of ${SL.length}"><div class="scene">${sc(s[5],i)}</div><div class="wrap cp"><div class="cap">${s[0]}</div><h1>${s[1]}</h1><p>${s[2]}</p><div><a class="btn" href="${s[4]}" style="background:var(--l);border-color:var(--l);color:#10260f">${s[3]}</a></div></div></div>`).join('')+
-`<div class="ctl"><div class="wrap"><div class="bars">${SL.map((s,i)=>`<button class="bar" aria-label="Slide ${i+1}"><i></i><span>${s[0]}</span></button>`).join('')}</div><span class="sp"></span><button class="ar" id="pv" aria-label="Previous">←</button><button class="ar" id="nx" aria-label="Next">→</button></div></div>`;
-let cur=0,tm;const T=7000;H.style.setProperty('--t',T+'ms');
-function go(n){cur=(n+SL.length)%SL.length;$$('.sl').forEach((e,i)=>e.classList.toggle('on',i===cur));$$('.bar').forEach((b,i)=>{b.classList.remove('on');if(i===cur){void b.offsetWidth;b.classList.add('on')}});clearTimeout(tm);if(!RM&&!H.classList.contains('p'))tm=setTimeout(()=>go(cur+1),T)}
-$('#nx').onclick=()=>go(cur+1);$('#pv').onclick=()=>go(cur-1);$$('.bar').forEach((b,i)=>b.onclick=()=>go(i));
-H.onmouseenter=()=>{H.classList.add('p');clearTimeout(tm)};H.onmouseleave=()=>{H.classList.remove('p');go(cur)};
-let x0;H.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});H.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
-addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});go(0);
-// header, menu, top button
-addEventListener('scroll',()=>{$('#hd').classList.toggle('s',scrollY>10);$('#up').classList.toggle('v',scrollY>700)},{passive:true});
-$('#up').onclick=()=>scrollTo({top:0});
-$('#bg').onclick=()=>$('#nv').classList.toggle('o');$$('#nv a').forEach(a=>a.onclick=()=>$('#nv').classList.remove('o'));
-// reveal + counters
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('[data-c]').forEach(c=>{const to=+c.dataset.c,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1700),v=Math.round(to*(1-Math.pow(1-k,4)));c.textContent=to>=5000?v.toLocaleString():v;if(k<1)requestAnimationFrame(f)})(t0)});io.unobserve(e.target)}),{threshold:.2});
-const rv=()=>$$('[data-r]:not(.in)').forEach(e=>io.observe(e));
-// academics
-const ST=[['Early Years','Where wonder begins','Play-led discovery builds language, number sense, confidence and the habit of asking why.',['Play-based learning','Early language and literacy','Social and emotional growth']],
-['Nursery','Strong foundations','Structured routines, early reading and creative exploration prepare each child for formal learning.',['Phonics and early reading','Early numeracy','Music, art and movement']],
-['Primary','Curious, capable, confident','A blended Nigerian–British curriculum, supported by clubs, coding and leadership opportunities.',['Core subjects','Coding and robotics','Clubs and leadership']],
-['Secondary','Ready for what’s next','Rigorous subject teaching, debate, journalism and leadership prepare students for external examinations and beyond.',['Junior Secondary programme','Debate and public speaking','Examination preparation']]];
-ST.forEach((s,i)=>{const b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.textContent=s[0];b.onclick=()=>pick(i);$('#tabs').appendChild(b)});
-function pick(i){$$('.tab').forEach((b,j)=>b.setAttribute('aria-selected',i===j));const s=ST[i];$('#pn').innerHTML=`<div class="pn"><div><h3>${s[1]}</h3><p>${s[2]}</p></div><ul>${s[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`}pick(0);
-// news
-[['2025','Schools debate','Our secondary section takes part in the ICPC-backed schools debate for International Anti-Corruption Day.'],['2023','Ayo L’áyo Club','An after-school programme built on the traditional African board game Ayo Olopon is documented.'],['2021','FCTA recognition','The FCT Minister acknowledges the school’s place among the nation’s top private primary schools.'],['2026','New session','The 2026/2027 session opens, with teaching and early years roles advertised.']].forEach((n,i)=>{const d=document.createElement('div');d.className='card';d.dataset.r='';d.style.setProperty('--d',i*.1+'s');d.innerHTML=`<div class="im">${sc(['#0b5d3b','#073b26','#A7CE52'],i+4).replace('viewBox="0 0 1200 700"','viewBox="0 200 1200 300"')}</div><div class="t"><div class="cap">${n[0]}</div><h4>${n[1]}</h4><p>${n[2]}</p></div>`;$('#cards').appendChild(d)});
-['Sports','JET Club','Arts & Crafts','Music & Choir','Debate Club','Coding & Robotics','Drama','Environmental Club','Journalism','Chess Club','Volunteering','Dance'].forEach(a=>{const p=document.createElement('span');p.className='pill';p.textContent=a;$('#pills').appendChild(p)});
-[['Library','5,000+ books reported'],['Science laboratory','Hands-on discovery'],['ICT &amp; language labs','Technology and languages'],['Multipurpose hall','Assemblies and events'],['Music room','Choir and instruments'],['Sports facilities','Indoor and outdoor'],['Playground','Safe space to play'],['Security','On-campus security']].forEach(f=>{const d=document.createElement('div');d.innerHTML=`<b>${f[0]}</b><span>${f[1]}</span>`;$('#fac').appendChild(d)});
-rv();
-// form
-$('#f').onsubmit=e=>{e.preventDefault();let ok=true;['n','e','m'].forEach(id=>{const i=$('#'+id),v=i.value.trim(),good=v&&(id!=='e'||/^\S+@\S+\.\S+$/.test(v));i.parentElement.classList.toggle('bad',!good);if(!good)ok=false});if(!ok)return;
-$('#ok').style.display='block';location.href='mailto:bloomingheritagesecsch@gmail.com?subject='+encodeURIComponent('Admissions enquiry: '+$('#s').value)+'&body='+encodeURIComponent(`Name: ${$('#n').value}\nEmail: ${$('#e').value}\nStage: ${$('#s').value}\n\n${$('#m').value}`)};
-</script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
